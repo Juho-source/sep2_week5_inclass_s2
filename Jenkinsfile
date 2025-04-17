@@ -39,11 +39,11 @@ pipeline {
                 }
             }
         }
-        stage('Docker Build') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    def dockerImage = docker.build("myapp:${env.BUILD_ID}")
-                    dockerImage.push()
+                    // Build Docker image
+                    docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
         }
