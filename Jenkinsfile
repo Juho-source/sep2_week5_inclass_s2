@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
                     sh """
-                    export PATH=$PATH:/path/to/sonar-scanner/bin
+                    export PATH=$PATH:/usr/local/sonar-scanner/bin/sonar-scanner
                     sonar-scanner \
                         sonar-scanner ^
                         -Dsonar.projectKey=devops-demo ^
